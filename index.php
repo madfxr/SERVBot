@@ -1,5 +1,5 @@
 <?php
-    define('BOT_TOKEN', '<authorization token>');
+    define('BOT_TOKEN', 'authorization_token');
     define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
     $content = file_get_contents("php://input");
