@@ -3,9 +3,11 @@
 ## Requirments
 - Nmap
 - Git
-- Nginx 
+- Nginx
 - PHP-FPM
 - PHP
+- Certbot (Let's Encrypt)
+- Telegram Bot
 
 ## Installation
 - Configure the web server and SSL: https://certbot.eff.org/lets-encrypt/centosrhel7-nginx
@@ -57,8 +59,8 @@ whois - Client for the whois directory service
 ```
 
 ## Demo
-@madfxrXservbot
+@madfxrXservbot (https://t.me/madfxrXservbot)
 
 ## Notes
 - SERVBot is still tried on CentOS 7 x86_64 only
-- If you are using another operating system, feel free to make changes to an existing source code
+- If you are using another operating system, feel free to make changes to an existing PHP source code
