@@ -1,19 +1,19 @@
 # Linux Server Monitoring with Telegram Bot
 
 ## Requirments
-- Nmap
 - Git
 - Nginx
 - PHP-FPM
 - PHP
 - Certbot
+- Nmap
 
 ## Installation
 - Configure the web server and SSL: https://certbot.eff.org/lets-encrypt/centosrhel7-nginx
 - Cloning PHP source code: https://github.com/xnxmx/servbot.git
 - Chat in Telegram with @BotFather (https://t.me/BotFather) and create a new bot
 - Get your token key
-- In php file, line 7, change (authorization_token) for your token
+- In php file, line 7, change authorization_token with your token
 - Upload to your server with SSL support
 - Set webhook in: https://api.telegram.org/bot(authorization_token)/setWebhook?url=https://domain.tld/index.php
 - Add following lines to /etc/sudoers, where username is your account name's domain:
