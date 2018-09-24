@@ -6,8 +6,7 @@
 - Nginx
 - PHP-FPM
 - PHP
-- Certbot (Let's Encrypt)
-- Telegram Bot
+- Certbot
 
 ## Installation
 - Configure the web server and SSL: https://certbot.eff.org/lets-encrypt/centosrhel7-nginx
@@ -37,9 +36,8 @@ username  ALL = NOPASSWD: /usr/bin/whois
 ```
 
 - Open conversation in Telegram with your bot searching @yourBotName
-- Enjoy
+- Edit @yourBotName commands:
 
-## Commands
 ```
 startx - Running a SERVBot
 df - Report file system disk space usage
@@ -57,6 +55,8 @@ ping - Send ICMP ECHO_REQUEST to network hosts
 traceroute - Print the route packets trace to network host
 whois - Client for the whois directory service
 ```
+
+- Enjoy
 
 ## Demo
 @madfxrXservbot (https://t.me/madfxrXservbot)
