@@ -1,6 +1,6 @@
 <?php
 
-    define('BOT_TOKEN', '663961047:AAFWy0k60ekLssujSIkRacmKuDqnTnq8Wl4');
+    define('BOT_TOKEN', '<authorization token>');
     define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
     $content = file_get_contents("php://input");
@@ -76,42 +76,27 @@
 
         case "/ping":
             file_put_contents($file);
-            $msg = shell_exec("ping 103.23.21.177 -c 10");
+            $msg = shell_exec("ping 192.168.1.1 -c 10");
         break;	
 
         case "/traceroute":
             file_put_contents($file);
-            $msg = shell_exec("traceroute 103.23.21.177");
+            $msg = shell_exec("traceroute 192.168.1.1");
         break;	
 
         case "/nmap":
             file_put_contents($file);
-            $msg = shell_exec("nmap -p 1-65500 103.23.21.177");
+            $msg = shell_exec("nmap -p 1-65500 192.168.1.1");
         break;
 
         case "/whois":
             file_put_contents($file);
-            $msg = shell_exec("whois pwned.my.id");
+            $msg = shell_exec("whois domain.tld");
         break;
 
         case "/uname":
             file_put_contents($file);
             $msg = shell_exec("uname -a");
-        break;
-
-        case "/shutdown":
-            file_put_contents($file);
-            $msg = shell_exec("shutdown now");
-        break;
-
-        case "/reboot":
-            file_put_contents($file);
-            $msg = shell_exec("reboot");
-        break;
-
-        case "/poweroff":
-            file_put_contents($file);
-            $msg = shell_exec("poweroff");
         break;
 
     endswitch;
