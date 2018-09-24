@@ -13,9 +13,9 @@
 - Cloning PHP source code: https://github.com/xnxmx/servbot.git
 - Chat in Telegram with @BotFather (https://t.me/BotFather) and create a new bot
 - Get your token key
-- In php file, line 7, change <authorization token> for your token
+- In php file, line 7, change (authorization token) for your token
 - Upload to your server with SSL support
-- Set webhook in: https://api.telegram.org/bot<authorization token>/setWebhook?url=https://domain.tld/index.php
+- Set webhook in: https://api.telegram.org/bot(authorization token)/setWebhook?url=https://domain.tld/index.php
 - Add following lines to /etc/sudoers, where username is your account name's domain:
 
 ```
