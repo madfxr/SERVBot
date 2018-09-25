@@ -98,6 +98,15 @@
             $msg = shell_exec("uname -a");
         break;
 
+        case "/telnet";
+            file_put_contents($file);
+            $msg = shell_exec("telnet 192.168.1.1 22");
+        break;
+
+        case "/dig";
+            file_put_contents("dig domain.tld +short");
+        break;
+
     endswitch;
 
     $sendto =API_URL."sendmessage?chat_id=".$chatID."&text=".urlencode($msg);
