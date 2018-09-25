@@ -104,7 +104,8 @@
         break;
 
         case "/dig";
-            file_put_contents("dig domain.tld +short");
+            file_put_contents($file);
+            $msg = shell_exec("dig domain.tld A +short && dig domain.tld NS +short && dig domain.tld TXT +short && dig domain.tld MX +short");
         break;
 
     endswitch;
