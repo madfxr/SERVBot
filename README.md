@@ -31,7 +31,9 @@ username  ALL = NOPASSWD: /usr/bin/w
 username  ALL = NOPASSWD: /usr/bin/last
 username  ALL = NOPASSWD: /usr/bin/nmap
 username  ALL = NOPASSWD: /usr/bin/ping
+username  ALL = NOPASSWD: /usr/bin/telnet
 username  ALL = NOPASSWD: /usr/bin/traceroute
+username  ALL = NOPASSWD: /usr/bin/dig
 username  ALL = NOPASSWD: /usr/bin/whois
 ```
 
@@ -39,19 +41,20 @@ username  ALL = NOPASSWD: /usr/bin/whois
 - Edit @yourBotName commands:
 
 ```
-startx - Running a SERVBot
 df - Report file system disk space usage
 free - Display amount of free and used memory in the system
 ps - Report a snapshot of the current processes
 top - Report a snapshot of the current processes
 date - Print or set the system date and time
 uptime - Tell how long the system has been running
-uname - Print system information
-sysinfo - Print system operation information
-w - Show who is logged on and what they are doing
 last - Show a listing of last logged in users
+w - Show who is logged on and what they are doing
+sysinfo - Print system operation information
+uname - Print system information
+dig - DNS lookup utility
 nmap - Network exploration tool and security / port scanner
 ping - Send ICMP ECHO_REQUEST to network hosts
+telnet - User interface to the TELNET protocol
 traceroute - Print the route packets trace to network host
 whois - Client for the whois directory service
 ```
