@@ -29,6 +29,7 @@ username  ALL = NOPASSWD: /usr/bin/uname
 username  ALL = NOPASSWD: /usr/bin/cat
 username  ALL = NOPASSWD: /usr/bin/w
 username  ALL = NOPASSWD: /usr/bin/last
+username  ALL = NOPASSWD: /usr/bin/nc
 username  ALL = NOPASSWD: /usr/bin/nmap
 username  ALL = NOPASSWD: /usr/bin/ping
 username  ALL = NOPASSWD: /usr/bin/telnet
@@ -52,6 +53,7 @@ w - Show who is logged on and what they are doing
 sysinfo - Print system operation information
 uname - Print system information
 dig - DNS lookup utility
+nc - Arbitrary TCP and UDP connections and listens
 nmap - Network exploration tool and security / port scanner
 ping - Send ICMP ECHO_REQUEST to network hosts
 telnet - User interface to the TELNET protocol
