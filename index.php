@@ -108,6 +108,11 @@
             $msg = shell_exec("dig domain.tld A +short && dig domain.tld NS +short && dig domain.tld TXT +short && dig domain.tld MX +short");
         break;
 
+        case "/nc":
+            file_put_contents($file);
+            $msg = shell_exec("nc 192.168.1.1 22");
+        break;
+
     endswitch;
 
     $sendto =API_URL."sendmessage?chat_id=".$chatID."&text=".urlencode($msg);
