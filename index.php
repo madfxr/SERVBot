@@ -1,5 +1,5 @@
 <?php
-    define('BOT_TOKEN', '663961047:AAFWy0k60ekLssujSIkRacmKuDqnTnq8Wl4');
+    define('BOT_TOKEN', '<authorization_token>');
     define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
  
     $content = file_get_contents("php://input");
@@ -160,7 +160,6 @@
  
     endswitch;
  
-    $sendto =API_URL."sendmessage?chat_id="
-    $chatID."&text=".urlencode($msg);
+    $sendto =API_URL."sendmessage?chat_id=".$chatID."&text=".urlencode($msg);
     file_get_contents($sendto);
 ?>
