@@ -16,8 +16,7 @@
 - In php file line 2, change ``<authorization_token>`` with your API token (example: ``613961047:AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4``)
 - Upload the ``index.php`` file to your Web Server with SSL support
 - Then access the following URL: ``https://api.telegram.org/bot<authorization_token>/setWebhook?url=https://domain.tld/index.php`` in the web browser to set the webhook (example: ``https://api.telegram.org/bot613961047:AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4/setWebhook?url=https://domain.tld/index.php``
-- Open conversation in Telegram with your bot searching: ``@yourBotName``
-- Edit ``@yourBotName`` commands:
+- Chat in Telegram with ``@BotFather (https://t.me/BotFather)`` and edit ``@yourBotName`` commands:
 
 ```
 df - Report file system disk space usage
