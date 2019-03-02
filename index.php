@@ -20,7 +20,7 @@
  
         case "/start": 
             file_put_contents($file);
-            $msg = "Welcome to SERVBot | Linux Server Monitoring with Telegram Bot (https://github.com/xnxmx/servbot)";
+            $msg = "Welcome to SERVBot - Linux Server Monitoring with Telegram Bot (https://github.com/xnxmx/servbot)";
         break;
 
         case "/df":
