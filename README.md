@@ -45,7 +45,7 @@ dig - DNS lookup utility
 whois - Client for the whois directory service
 ```
 
-- Enjoy
+- Enjoy!
 
 ## Demo
 @madfxrXservbot (https://t.me/madfxrXservbot)
