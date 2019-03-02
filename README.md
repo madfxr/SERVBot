@@ -12,10 +12,10 @@
 - Configure the Web Server and SSL: ``https://certbot.eff.org/lets-encrypt/centosrhel7-nginx``
 - Cloning PHP source code: ``https://github.com/xnxmx/servbot.git``
 - Chat in Telegram with ``@BotFather (https://t.me/BotFather)`` and create a new bot
-- Get your API token (example: ``613961047: AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4``)
-- In php file line 2, change ``<authorization_token>`` with your API token (example: ``613961047: AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4``)
+- Get your API token (example: ``613961047:AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4``)
+- In php file line 2, change ``<authorization_token>`` with your API token (example: ``613961047:AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4``)
 - Upload the ``index.php`` file to your Web Server with SSL support
-- Set webhook in: ``https://api.telegram.org/bot<authorization_token>/setWebhook?url=https://domain.tld/index.php``
+- Set webhook in: ``https://api.telegram.org/bot<authorization_token>/setWebhook?url=https://domain.tld/index.php`` (example: ``https://api.telegram.org/bot613961047:AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4/setWebhook?url=https://domain.tld/index.php``
 - Open conversation in Telegram with your bot searching: ``@yourBotName``
 - Edit ``@yourBotName`` commands:
 
