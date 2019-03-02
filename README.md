@@ -9,7 +9,7 @@
 - Certbot
 
 ## Installation
-- Configure the web server and SSL: ``https://certbot.eff.org/lets-encrypt/centosrhel7-nginx``
+- Configure the Web Server and SSL: ``https://certbot.eff.org/lets-encrypt/centosrhel7-nginx``
 - Cloning PHP source code: ``https://github.com/xnxmx/servbot.git``
 - Chat in Telegram with ``@BotFather (https://t.me/BotFather)`` and create a new bot
 - Get your token key (example: ``613961047: AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4``)
