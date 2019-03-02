@@ -12,9 +12,9 @@
 - Configure the web server and SSL: ``https://certbot.eff.org/lets-encrypt/centosrhel7-nginx``
 - Cloning PHP source code: ``https://github.com/xnxmx/servbot.git``
 - Chat in Telegram with ``@BotFather (https://t.me/BotFather)`` and create a new bot
-- Get your token key
+- Get your token key (example: ``613961047: AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4``)
 - In php file line 2, change ``<authorization_token>`` with your token
-- Upload to your server with SSL support
+- Upload the ``index.php`` file to your server with SSL support
 - Set webhook in: ``https://api.telegram.org/bot<authorization_token>/setWebhook?url=https://domain.tld/index.php``
 - Add following lines to /etc/sudoers, where username is your account name's domain:
 - Open conversation in Telegram with your bot searching ``@yourBotName``
