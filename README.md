@@ -41,6 +41,7 @@ nc - Arbitrary TCP and UDP connections and listens
 ping - Send ICMP ECHO_REQUEST to network hosts
 telnet - User interface to the TELNET protocol
 traceroute - Print the route packets trace to network host
+curl - Transfer data from or to a server
 dig - DNS lookup utility
 whois - Client for the whois directory service
 ```
