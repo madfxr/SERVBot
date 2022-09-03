@@ -7,6 +7,7 @@
 - PHP
 - BIND
 - Certbot
+- Telegram
 
 ## Installation
 - Configure the Web Server and SSL: ``https://certbot.eff.org/lets-encrypt/centosrhel7-nginx``
@@ -47,9 +48,6 @@ whois - Client for the whois directory service
 ```
 
 - Enjoy!
-
-## Demo
-@madfxrXservbot (https://t.me/madfxrXservbot)
 
 ## Notes
 - SERVBot is still tried on CentOS 7 x86_64 only
