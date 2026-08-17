@@ -1,165 +1,153 @@
 <?php
     define('BOT_TOKEN', '<authorization_token>');
     define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
- 
+
+    // The chat this bot answers to. The webhook URL is public, so without this
+    // check anyone who learns it can POST a forged update and run every command
+    // below — /id, /uname, /last, /nmap and the rest — with no authentication at
+    // all. Set this to your own Telegram chat id (talk to @userinfobot to get it).
+    define('OWNER_CHAT_ID', '<owner_chat_id>');
+
     $content = file_get_contents("php://input");
-    $update = json_decode($content, true);
+    $update  = json_decode($content, true);
+
+    // A Telegram webhook also delivers edited_message, channel_post and callbacks,
+    // none of which carry message.text — bail out rather than warn on a missing key.
+    if (!isset($update["message"]["chat"]["id"], $update["message"]["text"]))
+        die();
+
     $chatID = $update["message"]["chat"]["id"];
-    $text = $update['message']['text'];
-    $file = "$chatID/$chatID.txt";
- 
+    $text   = $update["message"]["text"];
+
+    // Authenticate the sender. This one line closes the disclosure hole AND the
+    // path-traversal that an attacker-controlled chat id used to open.
+    if ((string)$chatID !== (string)OWNER_CHAT_ID)
+        die();
+
     if ($text == "")
         die();
- 
-    if (!file_exists($chatID)):
-        mkdir($chatID, 0700, true);
-        fopen($file, 'w');
-    endif;
- 
+
     switch ($text):
- 
-        case "/start": 
-            file_put_contents($file);
+
+        case "/start":
             $msg = "Welcome to SERVBot - Linux Server Monitoring with Telegram Bot (https://github.com/madfxr/servbot)";
         break;
 
         case "/df":
-            file_put_contents($file);
             $msg = shell_exec("df -Th");
         break;
- 
+
         case "/free":
-            file_put_contents($file);
             $msg = shell_exec("free -m");
         break;
 
-        case "/top": 
-            file_put_contents($file);
+        case "/top":
             $msg = shell_exec("top -b -n 1 | head -n 15");
         break;
- 
+
         case "/ps":
-            file_put_contents($file);
             $msg = shell_exec("ps auxf | head -n 15");
         break;
 
         case "/mariadbstatus":
-            file_put_contents($file);
             $msg = shell_exec("systemctl status mariadb -l");
         break;
 
         case "/namedstatus":
-            file_put_contents($file);
             $msg = shell_exec("systemctl status named -l");
         break;
 
         case "/nginxstatus":
-            file_put_contents($file);
             $msg = shell_exec("systemctl status nginx -l");
         break;
 
         case "/phpfpmstatus":
-            file_put_contents($file);
             $msg = shell_exec("systemctl status php-fpm -l");
         break;
 
         case "/sshdstatus":
-            file_put_contents($file);
             $msg = shell_exec("systemctl status sshd -l");
         break;
 
         case "/id":
-            file_put_contents($file);
             $msg = shell_exec("id");
         break;
 
         case "/last":
-            file_put_contents($file);
             $msg = shell_exec("last -50");
         break;
 
         case "/w":
-            file_put_contents($file);
             $msg = shell_exec("w");
         break;
 
         case "/ls":
-            file_put_contents($file);
             $msg = shell_exec('ls -lah');
         break;
 
         case "/pwd":
-            file_put_contents($file);
             $msg = shell_exec('pwd');
         break;
 
         case "/date":
-            file_put_contents($file);
             $msg = shell_exec("date");
         break;
 
         case "/phpversion":
-            file_put_contents($file);
             $msg = shell_exec("php --version");
         break;
 
         case "/sysinfo":
-            file_put_contents($file);
             $msg = shell_exec("cat /etc/*release");
         break;
 
         case "/uname":
-            file_put_contents($file);
             $msg = shell_exec("uname -a");
         break;
 
         case "/uptime":
-            file_put_contents($file);
             $msg = shell_exec("uptime");
         break;
 
         case "/nc":
-            file_put_contents($file);
             $msg = shell_exec("nc 192.168.1.1 22");
         break;
 
         case "/nmap":
-            file_put_contents($file);
             $msg = shell_exec("nmap -p 1-65500 192.168.1.1");
         break;
 
         case "/ping":
-            file_put_contents($file);
             $msg = shell_exec("ping 192.168.1.1 -c 10");
         break;
- 
+
         case "/speedtestcli":
-            file_put_contents($file);
             $msg = shell_exec("/opt/speedtest-cli --bytes");
         break;
 
         case "/telnet":
-            file_put_contents($file);
             $msg = shell_exec("telnet 192.168.1.1 22");
         break;
 
         case "/traceroute":
-            file_put_contents($file);
             $msg = shell_exec("traceroute 192.168.1.1");
         break;
 
         case "/dig":
-            file_put_contents($file);
             $msg = shell_exec("dig domain.tld ANY +short");
         break;
 
         case "/whois":
-            file_put_contents($file);
             $msg = shell_exec("whois domain.tld");
         break;
- 
+
     endswitch;
- 
-    $sendto =API_URL."sendmessage?chat_id=".$chatID."&text=".urlencode($msg);
+
+    // An unknown command leaves $msg unset; shell_exec can also return null on an
+    // empty result. Either way, do not send an empty message.
+    if (empty($msg))
+        die();
+
+    $sendto = API_URL."sendmessage?chat_id=".urlencode($chatID)."&text=".urlencode($msg);
     file_get_contents($sendto);
 ?>
