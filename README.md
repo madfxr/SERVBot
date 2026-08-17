@@ -10,11 +10,12 @@
 - Telegram.
 
 ## Installation
-- Configure the Web Server and SSL: ``https://certbot.eff.org/lets-encrypt/centosrhel7-nginx``.
+- Configure the Web Server and SSL with Certbot: ``https://certbot.eff.org/`` (pick your OS and web server; the old CentOS/RHEL 7 guide is end-of-life).
 - Cloning PHP source code: ``https://github.com/madfxr/servbot.git``.
 - Chat in Telegram with ``@BotFather (https://t.me/BotFather)`` and create a new bot.
 - Get your API token (example: ``613961047:AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4``).
-- In php file line 2, change ``<authorization_token>`` with your API token (example: ``613961047:AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4``).
+- In ``index.php``, set ``BOT_TOKEN`` to your API token.
+- **Set ``OWNER_CHAT_ID`` to your own Telegram chat id** so the bot only answers you — the webhook URL is public, and without this anyone who finds it can run every command. Get your id from ``@userinfobot (https://t.me/userinfobot)``.
 - Upload the ``index.php`` file to your Web Server with SSL support.
 - Then access the following URL: ``https://api.telegram.org/bot<authorization_token>/setWebhook?url=https://domain.tld/index.php`` in the web browser to set the webhook (example: ``https://api.telegram.org/bot613961047:AZFWy0k603kLssujSIkKacmKuxxxTnq8Wl4/setWebhook?url=https://domain.tld/index.php``.
 - Chat in Telegram with ``@BotFather (https://t.me/BotFather)`` and edit ``@yourBotName`` commands:
